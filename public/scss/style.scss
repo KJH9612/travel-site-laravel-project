@@ -1090,7 +1090,7 @@ textarea.form-control {
 	padding-top: 0 !important;
 }
 .ftco-no-pb{
-	padding-bottom: 0 !important;
+	padding-bottom: 3px !important;
 }
 
 .ftco-bg-dark {
@@ -1600,7 +1600,8 @@ textarea.form-control {
 	background-position: center center;
 	position: relative;
 	display: block;
-	width: 100%;
+    width: 100%;
+    min-width: 350px;
 	height: 270px;
 	z-index: -1;
 }

@@ -6,10 +6,9 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate pb-5 text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                                class="fa fa-chevron-right"></i></a></span> <span>Blog <i
-                            class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-0 bread">Blog</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">메인화면 <i
+                                class="fa fa-chevron-right"></i></a></span> <span>블로그</span></p>
+                <h1 class="mb-0 bread">블로그</h1>
             </div>
         </div>
     </div>
@@ -17,13 +16,45 @@
 <section class="write-section">
     <div class="container">
         <div class="pt-5 pr-3" style="display:flex; flex-direction:row-reverse">
-            <a href="#" class="btn btn-danger">글쓰기</a>
+            @if(session('key'))
+                <!-- 로그인 상태 -->
+            @else
+                <!-- 로그아웃 상태 -->
+                <a href="{{route('blog.create')}}" class="btn btn-danger">글쓰기</a>
+            @endif
         </div>
     </div>
 </section>
+
 <section class="ftco-section">
     <div class="container">
         <div class="row d-flex">
+            @foreach ($list as $item)
+            <?php
+                $content_length = mb_strlen($item->content);
+            ?>
+            <div class="col-md-4 d-flex ftco-animate">
+                <div class="blog-entry justify-content-end">
+                    <a href="{{route('blog.show', $item->id)}}" class="block-20" style="background-image: url('images/image_1.jpg');">
+                    </a>
+                    <div class="text">
+                        <div class="d-flex align-items-center mb-4 topp">
+                            <div class="one">
+                                <span class="day">11</span>
+                            </div>
+                            <div class="two">
+                                <span class="yr">2020</span>
+                                <span class="mos">September</span>
+                            </div>
+                        </div>
+                        <h3 class="heading"><a href="{{route('blog.show', $item->id)}}">{{$item->title}}</a></h3>
+                        <p>{{$item->created_at}}</p>
+                        <p style="position: absolute !important; bottom: 0 !important; margin-bottom:1.4rem !important;"><a href="{{route('blog.show', $item->id)}}" class="btn btn-primary">Read more</a></p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry justify-content-end">
                     <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
@@ -39,7 +70,7 @@
                             </div>
                         </div>
                         <h3 class="heading"><a href="#">Most Popular Place In This World</a></h3>
-                        <p>한글테스트용 한글테스트용 한글테스트용 한글테스트용 한글테스트용 한글테스트용 한글테스트용 한글테스트용 한글테스트용 한글테스트용 한글테스트용</p>
+                        <p>한글테스트용 한글테스트용 한글테스트용 한글테스트용</p>
                         <p><a href="#" class="btn btn-primary">Read more</a></p>
                     </div>
                 </div>

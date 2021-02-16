@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('main');
 });
 Route::resource('blog', 'BlogController');
-
+Route::post('blog/upload', 'BlogController@upload')->name('blog.upload');

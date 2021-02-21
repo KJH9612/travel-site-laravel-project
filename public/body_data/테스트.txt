@@ -1,1 +1,0 @@
-<p style="text-align: right;"><img alt="" src="http://127.0.0.1:8000/images/test/화면 캡처 2021-01-31 161108_1612080269.png" style="float: left; width: 300px; height: 867px;" />&nbsp;안녕하세요 테스트입니다</p>

@@ -1,6 +1,19 @@
-@extends('header')
+@extends('hmain')
 @section('content')
-
+<style>
+    .btn-absol{position: absolute; bottom: 0;left: auto;}
+    .blog-entry .text{ min-height: 280px;}
+    .blog-entry.justify-content-end {width: 100%;}
+    .ftco-section.m-section {min-height: 1936px;max-height: 1936px;}
+    @media (max-width:767px) {
+        .blog-entry .text{ min-height: 200px !important;}
+        .ftco-section.m-section {max-height: none;}
+    }
+    @media (max-width:990px) {
+        .blog-entry .text{ min-height: 390px;}
+        .ftco-section.m-section {max-height: none;}
+    }
+</style>
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_1.jpg');">
     <div class="overlay"></div>
     <div class="container">
@@ -13,29 +26,18 @@
         </div>
     </div>
 </section>
-<section class="write-section">
-    <div class="container">
-        <div class="pt-5 pr-3" style="display:flex; flex-direction:row-reverse">
-            @if(session('key'))
-                <!-- 로그인 상태 -->
-            @else
-                <!-- 로그아웃 상태 -->
-                <a href="{{route('blog.create')}}" class="btn btn-danger">글쓰기</a>
-            @endif
-        </div>
-    </div>
-</section>
 
-<section class="ftco-section">
+<section class="ftco-section m-section">
     <div class="container">
         <div class="row d-flex">
             @foreach ($list as $item)
+            @if($item->deleteTime == null)
             <?php
                 $content_length = mb_strlen($item->content);
             ?>
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry justify-content-end">
-                    <a href="{{route('blog.show', $item->id)}}" class="block-20" style="background-image: url('images/image_1.jpg');">
+                    <a href="{{route('blog.show', $item->id)}}" class="block-20" style="background-image: url('images/thumbnail/{{$item->thumb}}');">
                     </a>
                     <div class="text">
                         <div class="d-flex align-items-center mb-4 topp">
@@ -53,6 +55,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             @endforeach
 
             <div class="col-md-4 d-flex ftco-animate">
@@ -71,7 +74,7 @@
                         </div>
                         <h3 class="heading"><a href="#">Most Popular Place In This World</a></h3>
                         <p>한글테스트용 한글테스트용 한글테스트용 한글테스트용</p>
-                        <p><a href="#" class="btn btn-primary">Read more</a></p>
+                        <p class="btn-absol"><a href="#" class="btn btn-primary">Read more</a></p>
                     </div>
                 </div>
             </div>
@@ -92,7 +95,7 @@
                         <h3 class="heading"><a href="#">Most Popular Place In This World</a></h3>
                         <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
                         </p>
-                        <p><a href="#" class="btn btn-primary">Read more</a></p>
+                        <p class="btn-absol"><a href="#" class="btn btn-primary">Read more</a></p>
                     </div>
                 </div>
             </div>
@@ -113,7 +116,7 @@
                         <h3 class="heading"><a href="#">Most Popular Place In This World</a></h3>
                         <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
                         </p>
-                        <p><a href="#" class="btn btn-primary">Read more</a></p>
+                        <p class="btn-absol"><a href="#" class="btn btn-primary">Read more</a></p>
                     </div>
                 </div>
             </div>
@@ -134,7 +137,7 @@
                         <h3 class="heading"><a href="#">Most Popular Place In This World</a></h3>
                         <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
                         </p>
-                        <p><a href="#" class="btn btn-primary">Read more</a></p>
+                        <p class="btn-absol"><a href="#" class="btn btn-primary">Read more</a></p>
                     </div>
                 </div>
             </div>
@@ -155,28 +158,7 @@
                         <h3 class="heading"><a href="#">Most Popular Place In This World</a></h3>
                         <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
                         </p>
-                        <p><a href="#" class="btn btn-primary">Read more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('images/image_6.jpg');">
-                    </a>
-                    <div class="text">
-                        <div class="d-flex align-items-center mb-4 topp">
-                            <div class="one">
-                                <span class="day">11</span>
-                            </div>
-                            <div class="two">
-                                <span class="yr">2020</span>
-                                <span class="mos">September</span>
-                            </div>
-                        </div>
-                        <h3 class="heading"><a href="#">Most Popular Place In This World</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
-                        </p>
-                        <p><a href="#" class="btn btn-primary">Read more</a></p>
+                        <p class="btn-absol"><a href="#" class="btn btn-primary">Read more</a></p>
                     </div>
                 </div>
             </div>

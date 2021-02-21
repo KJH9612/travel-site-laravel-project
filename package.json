@@ -10,18 +10,9 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "@types/ckeditor__ckeditor5-utils": "^10.2.4",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "parcel-bundler": "^1.12.4",
         "postcss": "^8.1.14"
-    },
-    "dependencies": {
-        "@ckeditor/ckeditor5-adapter-ckfinder": "^24.0.0",
-        "@ckeditor/ckeditor5-upload": "^24.0.0",
-        "ckeditor5-build-laravel-image": "^1.0.1",
-        "ckeditor5-simple-upload": "^1.0.7"
-    },
-    "type": "module"
+    }
 }

@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5,
 			padding-bottom: 1rem;
 		}
 	}
-
+	
 	.navbar-nav {
 		margin-right: 1em;
 		@include media-breakpoint-down(md){
@@ -144,7 +144,7 @@ h1, h2, h3, h4, h5,
 				box-shadow: 0px 10px 34px -20px rgba(0,0,0,0.41);
 			}
 
-
+			
 			&.ftco-seperator {
 				position: relative;
 				margin-left: 20px;
@@ -221,7 +221,7 @@ h1, h2, h3, h4, h5,
 			outline: none !important;
 		}
 	}
-
+	
 	&.scrolled  {
 		position: fixed;
 		right: 0;
@@ -302,7 +302,7 @@ h1, h2, h3, h4, h5,
 			transition: .3s all ease-out;
 		}
 		&.sleep {
-			transition: .3s all ease-out;
+			transition: .3s all ease-out;	
 		}
 
 		.navbar-brand {
@@ -464,7 +464,7 @@ h1, h2, h3, h4, h5,
 			display: inline-block;
 			border: 1px solid transparent;
 			background: $primary;
-
+			
 			@include border-radius(5px);
 			&:hover{
 				color: $white;
@@ -1078,11 +1078,11 @@ textarea.form-control {
 
 
 .ftco-section {
-	padding: 4em 0;
+	padding: 7em 0;
 	position: relative;
 	width: 100%;
 	@include media-breakpoint-down(sm){
-		padding: 3em 0;
+		padding: 6em 0;
 	}
 }
 
@@ -1090,7 +1090,7 @@ textarea.form-control {
 	padding-top: 0 !important;
 }
 .ftco-no-pb{
-	padding-bottom: 3px !important;
+	padding-bottom: 0 !important;
 }
 
 .ftco-bg-dark {
@@ -1508,9 +1508,9 @@ textarea.form-control {
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
   -webkit-backface-visibility: hidden;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out; 
+  -moz-transition: all 0.3s ease-out; 
+  -o-transition: all 0.3s ease-out; 
   transition: all 0.3s ease-out;
 }
 
@@ -1521,7 +1521,7 @@ textarea.form-control {
     opacity: 0.8;
 }
 
-.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing .mfp-container, 
 .mfp-with-zoom.mfp-removing.mfp-bg {
   opacity: 0;
 }
@@ -1592,7 +1592,7 @@ textarea.form-control {
 	}
 }
 
-//blocks
+//blocks 
 .block-20 {
 	overflow: hidden;
 	background-size: cover;
@@ -1600,8 +1600,7 @@ textarea.form-control {
 	background-position: center center;
 	position: relative;
 	display: block;
-    width: 100%;
-    min-width: 350px;
+	width: 100%;
 	height: 270px;
 	z-index: -1;
 }
@@ -1704,7 +1703,7 @@ textarea.form-control {
 	ul {
 		padding: 0;
 		li {
-
+			
 			&, > a {
 				display: table;
 				line-height: 1.5;
@@ -1724,7 +1723,7 @@ textarea.form-control {
 				padding-top: 2px;
 				color: $primary !important;
 			}
-
+			
 		}
 	}
 }
@@ -2029,7 +2028,7 @@ textarea.form-control {
 	padding: 10px;
 	font-size: 15px;
 	width: 100%;
-
+	
 	*:last-child {
 		margin-bottom: 0;
 	}
@@ -2082,7 +2081,7 @@ textarea.form-control {
 	background-color: rgba(255,255,255,0.9);
 	box-shadow: 0px 24px 64px rgba(0,0,0,0.24);
 	border-radius:16px;
-	opacity: 0;
+	opacity: 0; 
 	visibility: hidden;
 	transition: opacity .2s ease-out, visibility 0s linear .2s;
 	z-index:1000;

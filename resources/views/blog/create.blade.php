@@ -1,17 +1,12 @@
-@extends('header')
+@extends('hmain')
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-    .ck-editor__editable{
-        min-height: 500px;
-    }
-    .rating{
-        display: flex;
-        padding: 0;
-        margin: 0 auto;
-    }
+    .ck-editor__editable{min-height: 500px;}
+    #satis {margin-top: 2px;}
+    .rating{display: flex;padding: 0;margin: 0 auto;}
     .rating li { list-style-type: none; }
     .rating-item{border: 1px solid #fff; cursor: pointer; color: red;}
     .rating-item::before{content: "\2605"; }
@@ -50,37 +45,12 @@
             </div>
             <div class="mb-3">
                 <div class="row">
-                    <div class="col">
-                        <label for="Satisfaction" style="float: left; margin-right: 0.2rem"><span style="color:black;">만족도</span></label>
-                        <ul class="rating">
-                            <li class="rating-item" data-rate="1"></li>
-                            <li class="rating-item" data-rate="2"></li>
-                            <li class="rating-item" data-rate="3"></li>
-                            <li class="rating-item" data-rate="4"></li>
-                            <li class="rating-item" data-rate="5"></li>
-                        </ul>
-                        <div style="clear: both;"></div>
-                    </div>
                     <div class="col" style="text-align: right;">
-                        <input type="hidden" id="rate" value="0">
+                        <input type="hidden" name="pId" value="{{$hReserData->id}}">
                         <button type="submit">저장</button>
                     </div>
                 </div>
             </div>
-            <script>
-                const container = document.querySelector('.rating');
-                const items = container.querySelectorAll('.rating-item');
-                const rate = document.querySelector('#rate');
-
-                container.onclick = e => {
-                    const elClass = e.target.classList;
-                    if(!elClass.contains('active')){
-                        items.forEach( item => item.classList.remove('active'));
-                        rate.value = e.target.getAttribute('data-rate');
-                        elClass.add('active');
-                    }
-                }
-            </script>
         </form>
     </div>
 </section>
@@ -111,6 +81,4 @@
 // Laravel에서 AJAX사용하려면 추가해줘야함
 //xhr.setRequestHeader('X-CSRF-TOKEN', `${$("meta[name='csrf-token']").attr('content')}`);
 </script>
-
-
 @endsection

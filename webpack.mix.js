@@ -11,8 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-
-mix.js(['resources/js/app.js','node_modules/@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter.js'], 'public/js')
-.postCss('resources/css/app.css', 'public/css', [
+mix.js('resources/js/app.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
